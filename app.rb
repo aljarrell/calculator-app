@@ -45,9 +45,15 @@ get '/calculation' do
   if total == "add"
     function = add(number_one, number_two)
     total = "+"
+  elsif total == "subtract"
+    function = subtract(number_one, number_two)
+    total = "-"
   elsif total == "multiply"
     function = multiply(number_one, number_two)
     total = "*"
+  elsif total == "division"
+    function = division(number_one, number_two)
+    total = "/"
   end
   erb :calculation, locals: {number_one: number_one, number_two: number_two, total: total, function: function}
 end
