@@ -9,6 +9,11 @@ get '/' do
 end
 
 post '/number_one' do
-  number_one = params[:number_one].to_i
-  redirect 'number_two?number_one=' + number_one
+  number_one = params[:number_one]
+  redirect '/number_two?number_one=' + number_one
+end
+
+get '/number_two' do
+  number_one = params[:number_one]
+  erb :number_two, locals: {number_one: number_one}
 end
