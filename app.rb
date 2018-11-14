@@ -40,8 +40,8 @@ end
 
 get '/calculation' do
   total = params[:total]
-  number_two = params[:number_two].to_i
-  number_one = params[:number_one].to_i
+  number_two = params[:number_two].to_f
+  number_one = params[:number_one].to_f
   if total == "add"
     function = add(number_one, number_two)
     total = "+"
