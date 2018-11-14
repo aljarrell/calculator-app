@@ -5,5 +5,10 @@ require_relative 'multiplication.rb'
 require_relative 'division.rb'
 
 get '/' do
-  erb :number_one 
+  erb :number_one
+end
+
+post '/number_one' do
+  number_one = params[:number_one].to_i
+  redirect 'number_two?number_one=' + number_one
 end
