@@ -21,5 +21,11 @@ end
 post '/number_two' do
   number_two = params[:number_two]
   number_one = params[:number_one]
-  redirect '/operator?number_one=' + number_one + '&number_two=' + number_two 
+  redirect '/operator?number_one=' + number_one + '&number_two=' + number_two
+end
+
+get '/operator' do
+  number_two = params[:number_two]
+  number_one = params[:number_one]
+  erb :operator, locals: {number_one: number_one, number_two: number_two}
 end
