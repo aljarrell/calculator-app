@@ -17,3 +17,9 @@ get '/number_two' do
   number_one = params[:number_one]
   erb :number_two, locals: {number_one: number_one}
 end
+
+post '/number_two' do
+  number_two = params[:number_two]
+  number_one = params[:number_one]
+  redirect '/operator?number_one=' + number_one + '&number_two=' + number_two 
+end

@@ -1,1 +1,7 @@
 Your first number is <%= number_one %>, can I get another number?
+
+<form method = 'post' action = '/number_two'>
+  Number Two: <input type = "number" name = "number_two"><br>
+  <input type = "hidden" name = "number_one" value = "<%= number_one %>">
+  <input type="submit" value="Submit">
+</form>
