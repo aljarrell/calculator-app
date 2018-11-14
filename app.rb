@@ -32,7 +32,7 @@ end
 
 post '/operator' do
   total = params[:total]
-  p total
+  #p total
   number_two = params[:number_two]
   number_one = params[:number_one]
   redirect '/calculation?number_one=' + number_one + '&number_two=' + number_two + '&total=' + total
