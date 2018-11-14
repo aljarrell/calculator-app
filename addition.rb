@@ -1,3 +1,3 @@
-def add(numone, numtwo, numthree)
-    numone + numtwo + numthree
+def add(numone, numtwo)
+    numone + numtwo
 end

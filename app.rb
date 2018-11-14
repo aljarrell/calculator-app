@@ -29,3 +29,25 @@ get '/operator' do
   number_one = params[:number_one]
   erb :operator, locals: {number_one: number_one, number_two: number_two}
 end
+
+post '/operator' do
+  total = params[:total]
+  p total
+  number_two = params[:number_two]
+  number_one = params[:number_one]
+  redirect '/calculation?number_one=' + number_one + '&number_two=' + number_two + '&total=' + total
+end
+
+get '/calculation' do
+  total = params[:total]
+  number_two = params[:number_two].to_i
+  number_one = params[:number_one].to_i
+  if total == "add"
+    function = add(number_one, number_two)
+    total = "+"
+  elsif total == "multiply"
+    function = multiply(number_one, number_two)
+    total = "*"
+  end
+  erb :calculation, locals: {number_one: number_one, number_two: number_two, total: total, function: function}
+end
